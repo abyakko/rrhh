@@ -29,6 +29,7 @@ class RolController extends Controller
     public function create()
     {
         $permissions = Permission::all()->pluck('name', 'id');
+        //$empresa = Empresa::all();
         return view('rol.create', compact('permissions'));
     }
 

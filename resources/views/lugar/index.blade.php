@@ -29,6 +29,8 @@
         @endif
 
         @include('lugar.create')
+        @include('Validaciones.validacion')
+
        
         <br/>
         <br/>
@@ -42,18 +44,18 @@
             </thead>
 
             <tbody>
-                @foreach($lugar as $sucur)
+                @foreach($lugar as $lug)
                 <tr>
-                    <td>{{ $sucur->ciudad }}</td>
+                    <td>{{ $lug->ciudad }}</td>
                     
                     <td>
-                        <a class="btn btn-warning" href="{{ url('/lugars/'.$sucur->id.'/edit') }}" >
-                            Editar
-                        </a>
-                        <form action="{{ url('lugars/'.$sucur->id) }}" class="d-inline" method="post">
+                    @include('lugar.edit', [$lug->id])
+
+                        
+                        <form action="{{ url('lugars/'.$lug->id) }}" class="d-inline" method="post">
                             @csrf
                             {{method_field('DELETE')}}
-                            <button class="btn btn-danger" type="submit">
+                            <button class="btn btn-danger" type="submit" onclick="return confirm('¿Quieres borrar?')">
                                 <i class="fas fa-trash"></i>
                             </button>
                            
@@ -86,7 +88,7 @@
 <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script>
 <script>
-    $('#sucur').DataTable({
+    $('#lugar').DataTable({
         responsive: true,
         autoWidth: false,
         "language": {

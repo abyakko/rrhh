@@ -25,21 +25,20 @@
                 </div>
             @endif
             <div class="float-ring">
-                <a href="{{ route('empresas.empresapdf') }}" class="btn btn-primary" data-placement="left" target="_blank">
-                    <i class="fas fa-file-pdf"></i>
-                </a>
+                
                 &nbsp;
                 @include('empresa.create')
+                @include('Validaciones.validacion')
             </div>
             <br>
                 <table id="empresa" class="table table-striped">
                     <thead>
                         <th>NIT</th>
-                        <th>Nombre</th>
-                        <th>Propietario</th>
-                        <th>Celular</th>
-                        <th>Correo</th>
-                        <th>Acciones</th>
+                        <th>NOMBRE DE LA EMPRESA</th>
+                        <th>PROPIETARIO DE LA EMPRESA</th>
+                        <th>CELULAR</th>
+                        <th>CORREO</th>
+                        <th>ACCIONES</th>
                     </thead>
                     <tbody align="center">
                         @foreach ($empresa as $emp)
@@ -55,7 +54,7 @@
                                     <form action="{{ url('empresas/' . $emp->id) }}" class="d-inline " method="post">
                                         @csrf
                                         {{ method_field('DELETE') }}
-                                        <button class="btn btn-danger eliminar" type="submit">
+                                        <button class="btn btn-danger eliminar" type="submit" onclick="return confirm('¿Quieres borrar?')">
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </form>
@@ -99,6 +98,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+    <script  language="javascript" src="/resources/views/Validaciones/Validacion.js"> </script>
+    <script type ="text/javascript"src="resources/views/Validaciones/Validacion.js"></script>
    <script>
     $('#empresa').DataTable({
         responsive: true,
@@ -128,6 +129,9 @@
     <script>
         console.log('Hi!');
     </script>
+    <script>
+       
+        </script>
     @if (session('eliminar') == 'ok')
         <script src="http://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
     @endif

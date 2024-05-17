@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'FaceBol SRL',
+    'title' => 'Talento Humano',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => '<b>FaceBol</b>SRL',
-    'logo_img' => 'vendor/adminlte/dist/img/facebol.jpg',
+    'logo' => '<b>Talento Humano</b>',
+    'logo_img' => 'vendor/adminlte/dist/img/logoelalto.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -86,11 +86,11 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/logoelalto.png',
             'alt' => 'Auth Logo',
             'class' => '',
-            'width' => 50,
-            'height' => 50,
+            'width' => 150,
+            'height' => 150,
         ],
     ],
 
@@ -109,11 +109,11 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/logoelalto.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
-            'width' => 60,
-            'height' => 60,
+            'width' => 260,
+            'height' => 160,
         ],
     ],
 
@@ -304,24 +304,27 @@ return [
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'Buscar',
         ],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        // [
+        //     'text'        => 'ADMINISTRACION',
+        //     'url'         => 'admin/pages',
+        //     'icon'        => 'far fa-fw fa-file',
+        //     'label'       => 4,
+        //     'label_color' => 'success',
+        // ],
+
         [
-            'text'        => 'ADMINISTRACION',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'header' => 'ADMINISTRADOR',
+            'can' => 'Administrador',
         ],
-        
-        ['header' => 'ADMINISTRADOR',
-        'can' => 'Administrador',
-        ],
+
+
         [
             'text' => 'Usuarios',
             'url'  => 'users.index',
@@ -333,103 +336,134 @@ return [
                     'url'  => 'users',
                 ],
                 [
-                    'text' => 'Permisos',
-                    'url'  => 'permisos',
-                ],
-                [
                     'text' => 'Roles',
                     'url'  => 'roles',
                 ],
-            
+                [
+                    'text' => 'Permisos',
+                    'url'  => 'permisos',
+                ],
+
+
             ],
         ],
         [
-            'text' => 'Empresas',
-            'url'  => 'empresas.index',
+            'text' => 'Personal',
             'icon' => 'fas fa-fw fa-user',
             'submenu' => [
                 [
-                    'text' => 'Empresas',
-                    'url'  => 'empresas',
+                    'text' => 'Lista del Personal',
+                    'url'  => 'personal',
                 ],
                 [
-                    'text' => 'Sucursal',
+                    'text' => 'Registro',
+                    'url'  => 'registro',
+                ],
+                [
+                    'text' => 'Administrador',
+                    'url'  => 'administrador',
+                ],
+
+            ],
+        ],
+        [
+            'text' => 'Memorándum',
+            'icon' => 'fas fa-fw fa-copy',
+            'submenu' => [
+                [
+                    'text' => 'Memorándum',
+                    'url'  => 'Memorándum',
+                ],
+                // [
+                //     'text' => 'Sucursal',
+                //     'url'  => 'sucursals',
+                // ],
+                // [
+                //     'text' => 'Lugares',
+                //     'url'  => 'lugars',
+                // ],
+
+            ],
+        ],
+        [
+            'text' => 'Kardex',
+            'icon' => 'fas fa-fw fa-columns',
+            'submenu' => [
+                [
+                    'text' => 'Kardex',
+                    'url'  => 'kardex',
+                ],
+                // [
+                //     'text' => 'Sucursal',
+                //     'url'  => 'sucursals',
+                // ],
+                // [
+                //     'text' => 'Lugares',
+                //     'url'  => 'lugars',
+                // ],
+
+            ],
+        ],
+        [
+            'text' => 'Planillas',
+            'icon' => 'fas fa-fw fa-book',
+            'submenu' => [
+                [
+                    'text' => 'Planillas',
+                    'url'  => 'planillas',
+                ],
+                // [
+                //     'text' => 'Sucursal',
+                //     'url'  => 'sucursals',
+                // ],
+                // [
+                //     'text' => 'Lugares',
+                //     'url'  => 'lugars',
+                // ],
+
+            ],
+        ],
+        [
+            'text' => 'Asignación',
+            'icon' => 'fas fa-fw fa-edit',
+            'submenu' => [
+                [
+                    'text' => 'Lista de Asignación',
+                    'url'  => 'personas',
+                ],
+                [
+                    'text' => 'Registro Asignación',
                     'url'  => 'sucursals',
                 ],
                 [
-                    'text' => 'Lugares',
+                    'text' => 'Administración Asignación',
                     'url'  => 'lugars',
                 ],
-            
-            ],
-        ],
 
-        [
-            'text' => 'Convenios',
-            'url'  => 'convenios.index',
-            'icon' => 'fas fa-fw fa-lock',
-            'submenu' => [
-                [
-                    'text' => 'Convenios',
-                    'url'  => 'convenios',
-                ],
-                [
-                    'text' => 'Reportes Diarios',
-                    'url'  => 'sucursal.index',
-                ],
-                [
-                    'text' => 'Reportes Mensuales',
-                    'url'  => 'sucursal.index',
-                ],
-                [
-                    'text' => 'Reporte Convenios vencidos',
-                    'url'  => 'sucursal.index',
-                ],
-            
             ],
         ],
-        [
-            'text' => 'Tarjetas',
-            'url'  => 'tarjetas.index',
-            'icon' => 'fas fa-fw fa-lock',
-            'submenu' => [
-                [
-                    'text' => 'Tarjetas',
-                    'url'  => 'tarjetas',
-                ],
-                [
-                    'text' => 'Reportes Diarios',
-                    'url'  => 'sucursal.index',
-                ],
-                [
-                    'text' => 'Reportes Mensuales',
-                    'url'  => 'sucursal.index',
-                ],
-                [
-                    'text' => 'Reporte tarjetas vencidas',
-                    'url'  => 'sucursal.index',
-                ],
-            
-            ],
-        ],
-        [
-            'text' => 'Clientes',
-            'url'  => 'clientes',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-
         [
             'text' => 'Reportes',
-            'url'  => 'reportes.index',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-fw fa-chart-pie',
             'submenu' => [
                 [
-                    'text' => 'Sucursal',
-                    'url'  => 'sucursal.index',
+                    'text' => 'Personas',
+                    'url'  => 'personas',
                 ],
-            
+                // [
+                //     'text' => 'Sucursal',
+                //     'url'  => 'sucursals',
+                // ],
+                // [
+                //     'text' => 'Lugares',
+                //     'url'  => 'lugars',
+                // ],
+
             ],
         ],
+
+
+        /*
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
@@ -494,7 +528,7 @@ return [
             'text'       => 'information',
             'icon_color' => 'cyan',
             'url'        => '#',
-        ],
+        ],*/
     ],
 
     /*

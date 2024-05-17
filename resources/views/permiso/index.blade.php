@@ -15,6 +15,9 @@
                     </td>
                     <td align="center">
                         <h2> PERMISOS </h2>
+                 
+                 
+                 
                     </td>
                 </tr>
             </table>

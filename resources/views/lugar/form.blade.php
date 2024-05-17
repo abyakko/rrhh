@@ -1,11 +1,12 @@
 
 <div class="form-row">
     <div class="form-group col-md-12">
-        <label for="inputPassword4">LUGAR / CIUDAD</label>
-        <input type="text" class="form-control" id="ciudad" name="ciudad">
+    <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-map-marker-alt"></i></span>
+        <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="LUGAR / CIUDAD" oninput="this.value = this.value.toUpperCase();" onkeypress="return soloLetras(event)"style="text-transform:uppercase;">
     </div>
 
-  
+    </div>
 </div>
 
 <div class="form-row"> 
